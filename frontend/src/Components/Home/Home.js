@@ -7,7 +7,7 @@ import TopOffers from '../TopOffers/TopOffers'
 
 function Home() {
   return (
-    <div>
+    <div className='bg-h'>
         <Header/>
         <SliderBanner/>
         <CardOffers1/>

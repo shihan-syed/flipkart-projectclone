@@ -1,6 +1,31 @@
-.cbn{
-    background-color: white;
-}
-.caw{
+.prv,.nxt{
     color: black;
+    background-color: white;
+    font-size: 25px;
+}
+.prvbtn,.nxtbtn{
+    background-color: white ;
+    opacity: 1;
+    width: 47px;
+    height: 107px;
+    margin-top: 72px;
+}
+
+.prvbtn:hover,.nxtbtn:hover{
+    opacity: 1;
+
+}
+
+.prvbtn{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+.nxtbtn{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+}
+.carouselqsc{
+    padding: 8px;
 }

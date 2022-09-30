@@ -1,33 +1,8 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 .topnav{
     background-color:  #2874f0;
     height: 56px;
+    width:100%;
 }
  .flipkart-logo {
     width: 75px;
@@ -45,7 +20,7 @@
 }
 .flipkart-plus-logo
 {
- width: 10px;
+width: 10px;
 height: 10px;
 }
 .arrange{
@@ -54,11 +29,11 @@ height: 10px;
 }
 
  .logo-area{
-    margin-left: 142px;
+    margin-left: 166px;
     padding-top : 5px ;
-   padding-left: 50px ;
    width : 250px ;
    padding-bottom : 2px ;
+   margin-right: 0;
 }
 
 .plus-color{
@@ -79,7 +54,6 @@ height: 10px;
 .form22{
     display: flex;
     border-left: 0px;
-    
     border-right: 0px;
 }
 .btn22{
@@ -96,6 +70,10 @@ height: 10px;
     padding: 0px 16px;
 
 }
+.search22:focus{
+    outline : none;
+}
+
 .search-lens{
     /* font-weight: px; */
     color: #2874f0;
@@ -144,16 +122,19 @@ height: 10px;
     
     width: 4.7;
     height: 8;
-    /* transform: rotate(270deg); */
     margin: 1px 0 0 8px;
-}
- /* .arrow-class:hover{
+    margin-top: 12px;
+    opacity: 0.8;
 
-    
+}
+.arrow-class:hover{
+
     transform: rotate(180deg);
-     transform : .1s ; 
+    transform : .1s ; 
+    margin-bottom: 42px;
+    opacity: 0.8;
    
- } */
+ }
 
 .more-div{
 display: flex;
@@ -180,4 +161,18 @@ margin-top: 15px;
     margin-top: 15px;
     margin-left: 33px;
 }
+.qscqsc{
+    padding:0px;
+    margin-left:-148px;
+}
 
+@media only screen and (max-width: 1200px) {
+    .qscqsc{
+        padding:0px;
+        margin-left:0px;
+    }
+    .logo-area{
+        margin-left: 66px;
+        margin-right: 20px;
+    }
+  }

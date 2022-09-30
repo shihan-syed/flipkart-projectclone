@@ -7,7 +7,7 @@ const SliderBanner = () => {
          <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="https://storiesflistgv2.blob.core.windows.net/stories/2021/05/FKSfooterbanner_new__.jpg" className="d-block w-100" alt="..."/>
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/87d54183319f5e60.jpg?q=50" className="d-block w-100" alt="..."/>
     </div>
     <div className="carousel-item">
       <img src="https://androidjunglee.com/wp-content/uploads/2015/06/big-app-shoppings-android-phones.jpg" className="d-block w-100" alt="..."/>

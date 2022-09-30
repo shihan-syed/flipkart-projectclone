@@ -27,36 +27,157 @@
  
 .topnav{
     background-color:  #2874f0;
-   
-   
-   
-} 
-.logo-area{
-    margin-left: 30px;
-    padding-top : 5px ;
-   padding-left: 50px ;
-   margin-left: 15px;
+    height: 56px;
 }
-
+ .flipkart-logo {
+    width: 75px;
+    height: 20px;
+    
+}
 .explore{
     color : white ;
     position: relative;
-    top : -5px ;
     font-style: italic ;
-    
-
-}
-
-.flipkart-logo {
-    width: 75px;
-    height: 20px;
+    font-size: small;
+    font-weight: 400;
+     letter-spacing: -.5px; 
+    top: -5px;
 }
 .flipkart-plus-logo
 {
  width: 10px;
 height: 10px;
 }
+.arrange{
+    display: flex;
+
+}
+
+ .logo-area{
+    margin-left: 142px;
+    padding-top : 5px ;
+   padding-left: 50px ;
+   width : 250px ;
+   padding-bottom : 2px ;
+}
+
 .plus-color{
     color: #ffe500;
-    font-weight: 500;
+    font-weight: 400;
+} 
+.search-icon{
+    background-color: white;
+    color:blue ;
+    padding: 10px;
 }
+
+.input-entry{
+    width: 520px;
+    height: 32px;
+    padding: 2px;
+}
+.form22{
+    display: flex;
+    border-left: 0px;
+    
+    border-right: 0px;
+}
+.btn22{
+    color: blue;
+    background-color: white;
+    border: 0 ;
+    padding: 4px 12px 0px 8px;
+}
+.search22{
+    border: 2px solid white;
+    width: 500px;
+    height: 36px;
+    border-radius: 0px;
+    padding: 0px 16px;
+
+}
+.search-lens{
+    /* font-weight: px; */
+    color: #2874f0;
+
+}
+.form-astf{
+    margin-top: 10px;
+}
+.login-class{
+    color: #2874f0;
+    background-color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 5px 40px;
+    border: 1px solid #dbdbdb;
+}
+.login-astf{
+    margin-top: 10px;
+    margin-left: 33px;
+}
+.p-class{
+    color: white;
+    line-height: 20px;
+    font-size: 16px;
+    /* letter-spacing: .1px; */
+    font-weight: 490;
+    cursor: pointer;
+    
+}
+.p-div{
+    margin-top: 15px;
+    margin-left: 33px;
+}
+.more-class{
+    color: white;
+    line-height: 20px;
+    font-size: 16px;
+    /* letter-spacing: .1px; */
+    font-weight: 490;
+    cursor: pointer;
+}
+
+.arrow-class{
+    color: white;
+    
+    width: 4.7;
+    height: 8;
+    /* transform: rotate(270deg); */
+    margin: 1px 0 0 8px;
+}
+ /* .arrow-class:hover{
+
+    
+    transform: rotate(180deg);
+     transform : .1s ; 
+   
+ } */
+
+.more-div{
+display: flex;
+margin-top: 15px;
+    margin-left: 33px;
+
+}
+.cart-class{
+    color: white;
+    line-height: 20px;
+    font-size: 16px;
+    
+    font-weight: 490;
+    cursor: pointer;
+}
+.cart-icon{
+    color: white;
+    margin-top: 12px;
+    margin-right: 8px;
+
+}
+.cart-div{
+    display: flex;
+    margin-top: 15px;
+    margin-left: 33px;
+}
+

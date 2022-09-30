@@ -1,13 +1,38 @@
 
 
-.nav{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+.topnav{
     background-color:  #2874f0;
-    display: flex;
-   justify-content: center;
-   align-items: center;
    padding : 10px 0px ;
    
 } 
+.contenqwerty{
+    margin-left: 30px;
+}
 
 .explore{
     color : white ;

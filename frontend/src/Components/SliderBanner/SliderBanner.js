@@ -5,7 +5,7 @@ import "./SliderBanner.css"
 const SliderBanner = () => {
   return (
     <div className='carouselqsc'>
-       <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
+       <div id="carouselExampleFade" className="carousel slide " data-bs-ride="carousel">
 
 
   <div className="carousel-inner">

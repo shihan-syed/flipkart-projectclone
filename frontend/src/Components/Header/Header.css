@@ -165,6 +165,44 @@ margin-top: 15px;
     padding:0px;
     margin-left:-148px;
 }
+.modal-body{
+    background-color: white;
+    width: 690px  ;
+    height: 372px ;
+   
+}
+.modal-area{
+    display: flex;
+}
+.modal-blue{
+    background-color: #2874f0;
+    width: 200px;
+    height: 365px;
+}
+.modal-white{
+    background-color: white;
+    width: 500px;
+    height: 365px;
+}
+.blue-image{
+    margin-top: 120px;
+    width: 160px;
+    height: 100px;
+}
+.blue-line{
+    color: white;
+  padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 10px;
+}
+.span-line{
+    color: white;
+    padding-left: 20px; 
+    font-size: 15px;
+    line-height: 5px;
+    
+}
+
 
 @media only screen and (max-width: 1200px) {
     .qscqsc{

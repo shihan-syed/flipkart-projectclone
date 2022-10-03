@@ -23,7 +23,31 @@ export const Header = () =>
       </form>
       </div>
 
-      <div className='login-astf'><button className='login-class'> Login </button></div>
+      <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>
+
+    {/* Modal   */}
+
+<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog  ">
+    <div className='modal-area'>
+
+      <div className='modal-blue'>
+        <h4 className='blue-line'> Login </h4>
+        
+        <p className='span-line'>Get access to your  </p>
+        <p className='span-line'> Orders, Wishlist and  </p>
+        <p className='span-line'> Recommendations </p>
+
+        <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' className='blue-image'></img>
+      </div>
+      <div className='modal-white'></div>
+    </div>
+  
+  </div>
+</div>
+
+
+
 
       <div className='p-div'><p className='p-class'>Become a Seller</p></div>
 
@@ -42,5 +66,27 @@ export const Header = () =>
   </div>
   )
 }
+
+
+
+//  Modal  
+
+<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        ...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import CardOffers1 from '../CardOffers1/CardOffers1'
 import CardOffers2 from '../CardOffers2/CardOffers2'
+import CardOffers3 from '../CardOffers3/CardOffers3'
 import { Header } from '../Header/Header'
 import SliderBanner from '../SliderBanner/SliderBanner'
 import TopOffers from '../TopOffers/TopOffers'
@@ -10,9 +11,10 @@ function Home() {
     <div className='bg-h'>
         <Header/>
         <SliderBanner/>
-        <CardOffers1/>
         <TopOffers/>
+        <CardOffers1/>
         <CardOffers2/>
+        <CardOffers3/>
 
     </div>
   )

@@ -57,7 +57,7 @@ const TopOffers = () => {
       </div>
       
       <div className='dfgdfg'>
-        <img src="https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70" alt="" style={{"width":"230px", "height":"350px"}} />
+        <img src="https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70" alt="" style={{"width":"100%", "height":"350px"}} />
       </div>
     </div>
   )

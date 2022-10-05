@@ -18,7 +18,6 @@ app.use(express.json());
 
 
 
-
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`listening on: http://localhost:${PORT}`);

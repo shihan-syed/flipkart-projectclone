@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './CardOffers.css';
 import logo from "../../images/Screenshot 2022-10-03 145109.png"
+import axios from "axios";
+import {baseurl} from '../Axios/constants'
 
 
 function CardOffers1() {
@@ -24,6 +26,16 @@ function CardOffers1() {
       slidesToSlide: 1 // optional, default to 1.
     }
   };
+
+  const [data , setData]= useState([]);
+
+  useEffect(()=>{
+    axios.get(`${baseurl}/home/getdetails1`).then((data)=>{
+      console.log(data.data)
+      setData(data.data)
+    })
+  },[])
+
 
   return (
     <div>
@@ -47,14 +59,16 @@ function CardOffers1() {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
   >
-    <div><img src="https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70" alt="" style={{"width":"230px", "height":"350px"}}/></div>
-    <div>Item 2</div>
-    <div>Item 3</div>
-    <div>Item 4</div>
-    <div>Item 5</div>
-    <div>Item 6</div>
-    <div>Item 7</div>
-    <div>Item 8</div>
+    {data.map((itm,k)=>
+    <div className='egvwrg'>
+            <div className='textcenter rthfhfdh'><img src={itm.imageurl} alt="" style={{ "height":"250px"}}/></div>
+            <div className='textcenter etre'> <p>{itm.Name}</p>
+              <div className='textcenter dbhfj'><p>{itm.Description}</p></div>
+              <div className='textcenter erter'>{itm.Brand}</div>
+            </div>
+          </div>
+         )}
+   
 </Carousel>
 </div>
 

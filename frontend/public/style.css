@@ -1,4 +1,9 @@
 .bg-h {
   background-color: rgba(112, 128, 144, 0.09);
   min-height: 100vh;
+}
+
+.textcenter {
+  align-items: center;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

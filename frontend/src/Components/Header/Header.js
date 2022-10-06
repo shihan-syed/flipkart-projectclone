@@ -46,6 +46,8 @@ export const Header = () =>
 
         <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' className='blue-image'></img>
       </div>
+
+      
       <div className='modal-white'>
       <TextField id="standard-basic" label="Standard" variant="standard" />
       </div>

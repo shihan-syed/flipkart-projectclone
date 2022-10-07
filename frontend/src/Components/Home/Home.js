@@ -1,5 +1,4 @@
 import React from 'react'
-import Addproduct from '../Add Product/addproduct'
 import CardOffers1 from '../CardOffers1/CardOffers1'
 import CardOffers2 from '../CardOffers2/CardOffers2'
 import CardOffers3 from '../CardOffers3/CardOffers3'
@@ -16,7 +15,6 @@ function Home() {
         <CardOffers1/>
         <CardOffers2/>
         <CardOffers3/>
-        <Addproduct/>
 
     </div>
   )

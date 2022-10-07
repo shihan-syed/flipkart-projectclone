@@ -41,7 +41,7 @@ function Productlist() {
       setData(data.data)
     
     })
-  },[data1])
+  },[data1, search])
 
  
 

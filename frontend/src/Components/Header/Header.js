@@ -1,16 +1,22 @@
 import React from 'react'
+import TextField from '@mui/material/TextField';
 import './Header.css' ;
 export const Header = () => 
 {
   return (
    
-      <div className='topnav'>
+      <div className='topnav '>
+        
         <div className='arrange'>
         <div className='logo-area'><img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png' className='flipkart-logo' alt="" />
         <div ><p className='explore '>Explore 
           <span className='plus-color'> plus</span>
           <img  src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png' alt='img'  className='flipkart-plus-logo'/>
           </p>
+         
+    
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      
         </div>  
       </div>
 
@@ -27,7 +33,7 @@ export const Header = () =>
 
     {/* Modal   */}
 
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog  ">
     <div className='modal-area'>
 
@@ -40,8 +46,11 @@ export const Header = () =>
 
         <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' className='blue-image'></img>
       </div>
-      <div className='modal-white'></div>
+      <div className='modal-white'>
+      <TextField id="standard-basic" label="Standard" variant="standard" />
+      </div>
     </div>
+    
   
   </div>
 </div>

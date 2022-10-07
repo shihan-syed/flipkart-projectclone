@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors=require("cors");
+const db = require("./models");
 
 const homeData = require('./models/home')
 
@@ -52,6 +53,14 @@ productData.create(data).then((data)=>{
 
 
 
-app.listen(PORT , ()=>{
-    console.log(`Server Running on ${PORT}`)
+
+
+
+
+
+
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`listening on: http://localhost:${PORT}`);
+  });
 });

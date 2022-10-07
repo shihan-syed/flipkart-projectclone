@@ -1,0 +1,112 @@
+.ryrtgh{
+    display: flex;
+    background-color: rgba(112, 128, 144, 0.09);
+    min-height: 91vh;
+
+}
+.sidebarqwe{
+    background-color: white;
+    width: 20%;
+    margin: 10px;
+
+}
+
+.productlisting{
+    background-color: white;
+    width: 80%;
+    margin: 10px;
+    margin-left: 2px;
+
+}
+.filters{
+    display: flex;
+   border-bottom: 1px solid rgb(202, 201, 201);
+   padding-bottom: 3px;
+}
+.filters>div{
+    margin-left: 18px;
+    margin-top: 5px;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: medium;
+}
+.rtyghfgh{
+    cursor: pointer;
+}
+.itemlist{
+ width: 250px;
+ padding: 16px;
+ height: 450px;
+ margin-left: 16px;
+ cursor: pointer;
+}
+.itemlist:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rating{
+    background-color: green;
+    color: white;
+    padding: 2px,5px,2px,5px;
+    border-radius: 5px;
+    font-size: smaller;
+    border: 0;
+    margin-right:10px ;
+}
+.price{
+    display: flex;
+}
+.price>p{
+    margin-right: 15px;
+    margin-top: 3px;
+}
+.boldtext{
+    font-weight: 600;
+
+}
+.textlight{
+   color: rgba(0, 0, 0, 0.532);
+   text-decoration: line-through;
+}
+.greentext{
+   color: green;
+}
+.emi{
+    font-size: small;
+}
+.imghrt{
+    padding-top: 20px;
+    padding-bottom: 22px;
+}
+.keyword{
+    font-size: small;
+    color: rgba(0, 0, 0, 0.536);
+}
+.hdding{
+    cursor: pointer;
+    font-size: medium;
+    height: 40px;
+    overflow: hidden;
+}
+.hdding:hover{
+    color: blue;
+}
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .hhfjd{
+    font: inherit;
+    font-size:large;
+    padding: 14px;
+    font-weight:500;
+    border-bottom: 1px solid rgb(200, 200, 200);
+  }

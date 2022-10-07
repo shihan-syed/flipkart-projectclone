@@ -28,7 +28,7 @@ function CardOffers3() {
     const [data , setData]= useState([]);
 
     useEffect(()=>{
-      axios.get(`${baseurl}/home/getdetails3`).then((data)=>{
+      axios.get(`${baseurl}/home/getdetails1`).then((data)=>{
       console.log(data.data)
       setData(data.data)
     })

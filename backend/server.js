@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-const homeRoutes =require("./Routes/home")
+const homeRoutes =require("./Routes/home");
+const productData = require("./models/product");
 
 
 
@@ -26,15 +27,25 @@ app.post("/adddata" , (req,res)=>{
   imageurl:data.imageurl ,
   Name:data.name11 ,
   Description: data.description,
-  Brand: data.brand,
   Category:data.category,
+  Description: data.description,
+  keywords: data.keywords,
+  rating: data.rating,
+  maxprice : data.maxprice,
+  price: data.price,
+  discount: data.discount
 }
 
-homeData.create(data).then((data)=>{
+        
+       
+
+productData.create(data).then((data)=>{
+  console.log("sucess")
   res.send("Success")
 }).catch((err)=>{
   console.log(err)
   res.send(err)
+
 })
    
 })

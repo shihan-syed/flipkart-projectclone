@@ -4,8 +4,12 @@ import 'react-multi-carousel/lib/styles.css';
 import './Topoffers.css'
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
+import { useNavigate } from 'react-router-dom';
+
 
 const TopOffers = () => {
+
+  const history = useNavigate();
 
   const responsive = {
     desktop: {
@@ -34,6 +38,11 @@ const TopOffers = () => {
   })
 },[]);
 
+const redirecttp=(itm)=>{
+  localStorage.setItem("item" , itm.item)
+  history(`/listproduct/${itm.item}`)
+}
+
 
   return (
     <div className='d-flex'>
@@ -45,7 +54,7 @@ const TopOffers = () => {
                   itemClass="carousel-item-padding-40-px"
         >
           {data.map((itm,k)=>
-    <div className='egvwrg'>
+    <div className='egvwrg'  onClick={()=>{redirecttp(itm)}}>
             <div className='textcenter rthfhfdh'><img src={itm.imageurl} alt="" style={{"height":"250px"}}/></div>
             <div className='textcenter etre'> <p>{itm.Name}</p>
               <div className='textcenter dbhfj'><p>{itm.Description}</p></div>

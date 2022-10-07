@@ -13,7 +13,11 @@ function Addproduct() {
   const [description , setDescription] = useState('');
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [imageurl , setImageurl] = useState('');
-  const [brand , setBrand] = useState('');
+  const [keywords , setKeywords] = useState('');
+  const [rating , setRating] = useState(''); 
+  const [maxprice , setMaxprice] = useState('');
+  const [price , setPrice] = useState('');
+  const [discount , setDiscount] = useState('');
 
  
 
@@ -24,7 +28,11 @@ function Addproduct() {
         category: category,
         description: description,
         imageurl: imageurl,
-        brand:brand,
+        keywords: keywords,
+        rating: rating,
+        maxprice : maxprice,
+        price: price,
+        discount: discount
      
 
       })
@@ -65,8 +73,24 @@ function Addproduct() {
     <input required name="imageurl" value={imageurl} onChange={(e)=>setImageurl(e.target.value)} type="string" class="form-control" />
   </div>
   <div className="mb-3">
-    <label className="form-label">Brand</label>
-    <input required name="brand" value={brand} onChange={(e)=>setBrand(e.target.value)} type="string" class="form-control" />
+    <label className="form-label">Keywords</label>
+    <input required name="keywords" value={keywords} onChange={(e)=>setKeywords(e.target.value)} type="string" class="form-control" />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Rating</label>
+    <input required name="rating" value={rating} onChange={(e)=>setRating(e.target.value)} type="string" class="form-control" />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Maxprice</label>
+    <input required name="maxprice" value={maxprice} onChange={(e)=>setMaxprice(e.target.value)} type="string" class="form-control" />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">price</label>
+    <input required name="price" value={price} onChange={(e)=>setPrice(e.target.value)} type="string" class="form-control" />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">discount</label>
+    <input required name="discount" value={discount} onChange={(e)=>setDiscount(e.target.value)} type="string" class="form-control" />
   </div>
   <div className="d-grid">
   <button type="submit" class="btn btn-primary">Add Product</button>

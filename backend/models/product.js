@@ -9,7 +9,7 @@ const db={}
  db.Sequelize=Sequelize;
  db.sequel=sequel;
 
- const homeData = db.sequel.define('homeData', {
+ const productData = db.sequel.define('productData', {
     id: {
         type: DataTypes.INTEGER,  
          primaryKey: true,
@@ -25,26 +25,43 @@ const db={}
       allowNull: false
     },
     Description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1234),
       allowNull: false
 
-    },
-    Brand: {
-        type: DataTypes.STRING,
-        allowNull: false
-  
     },
     Category: {
         type: DataTypes.STRING,
         allowNull: false
-
-    }, 
-    item:{
+ 
+    },
+    keywords: {
       type: DataTypes.STRING,
-    }
+      allowNull: false
+
+  }, 
+  rating: {
+    type: DataTypes.DECIMAL(10, 1),
+    allowNull: false
+},
+maxprice: {
+  type: DataTypes.INTEGER,
+  allowNull: false
+
+},
+price: {
+  type: DataTypes.INTEGER,
+  allowNull: false
+
+},
+discount: {
+  type: DataTypes.INTEGER,
+  allowNull: false
+
+}
+
   });
   db.sequel.sync().then(()=>{
     console.log("sync")}
   )
 
-  module.exports = homeData;
+  module.exports = productData;

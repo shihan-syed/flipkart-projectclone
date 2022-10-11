@@ -1,10 +1,16 @@
 import React from 'react'
+
 import TextField from '@mui/material/TextField';
 import './Header.css' ;
+
+
 export const Header = () => 
-{
+{ 
+  
   return (
-   
+  
+  
+  
       <div className='topnav '>
         
         <div className='arrange'>
@@ -31,9 +37,9 @@ export const Header = () =>
 
       <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>
 
-    {/* Modal   */}
+     {/* Modal   */}
 
-<div className="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{/* <div className="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog  ">
     <div className='modal-area'>
 
@@ -51,11 +57,11 @@ export const Header = () =>
       <div className='modal-white'>
       <TextField id="standard-basic" label="Standard" variant="standard" />
       </div>
-    </div>
+    </div> 
     
   
   </div>
-</div>
+</div> */}
 
 
 
@@ -96,6 +102,7 @@ export const Header = () =>
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" className="btn btn-primary">Save changes</button>
       </div>
+      
     </div>
   </div>
 </div>

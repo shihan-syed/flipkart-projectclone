@@ -48,8 +48,7 @@ homeData.create(data).then((data)=>{
 
 
 
-db.sequelize.sync().then(() => {
+
   app.listen(PORT, () => {
     console.log(`listening on: http://localhost:${PORT}`);
   });
-});

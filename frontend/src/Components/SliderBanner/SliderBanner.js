@@ -11,13 +11,19 @@ const SliderBanner = () => {
   <div className="carousel-inner">
     
     <div className="carousel-item active">
-      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/87d54183319f5e60.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/27ef43b89056e751.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/e95e8556ed336725.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/1fe43c2dc524501b.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
     </div>
     <div className="carousel-item">
       <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/b66796849b310500.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/cae8d4a5b99d3365.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/75a15c3e19c3f7de.jpg?q=50" className="d-block w-100" style={{"height":"270px"}} alt="..."/>
     </div>
     </div>
     <a  className='active prvbtn bg-white'>

@@ -5,10 +5,11 @@ import './CardOffers.css';
 import logo from "../../images/Screenshot 2022-10-03 145109.png"
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
+import { useNavigate } from 'react-router-dom';
 
 
 function CardOffers1() {
-
+  const history = useNavigate();
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -36,6 +37,11 @@ function CardOffers1() {
     })
   },[])
 
+  const redirecttp=(itm)=>{
+    localStorage.setItem("item" , itm.item)
+    history(`/listproduct/${itm.item}`)
+  }
+
 
   return (
     <div>
@@ -60,7 +66,7 @@ function CardOffers1() {
             itemClass="carousel-item-padding-40-px"
   >
     {data.map((itm,k)=>
-    <div className='egvwrg'>
+    <div className='egvwrg' onClick={()=>{redirecttp(itm)}}>
             <div className='textcenter rthfhfdh'><img src={itm.imageurl} alt="" style={{ "height":"250px"}}/></div>
             <div className='textcenter etre'> <p>{itm.Name}</p>
               <div className='textcenter dbhfj'><p>{itm.Description}</p></div>

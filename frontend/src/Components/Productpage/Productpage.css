@@ -1,0 +1,119 @@
+.fnbcvjkfdh{
+    display: flex;
+    height: 90vh;
+}
+
+.imagename{
+    width: 42%;
+    /* background-color: aquamarine; */
+    height: 84vh;
+}
+.descriptionmath{
+    width: 68%;
+    margin-top: 40px;
+    height: 84vh;
+    overflow-x: scroll;
+    }
+.descriptionmath::-webkit-scrollbar {
+    display: none;
+  }
+
+.dngjkhfd>img{
+    border: 1px solid rgb(179, 176, 176);
+    padding: 20px;
+    margin-top: 45px;
+    margin-left: 95px;
+
+
+}
+.bnvjkfdc{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 95px;
+
+}
+.bnvjkfdc>div>button{
+    width: 195px;
+    height: 55px;
+    margin-right: 8px;
+    border: 0px;
+    color: white;
+    font-weight: 600;
+
+}
+
+.mnbv,.mnbvcx,.mnbvc,.mnbvcxz{
+    margin-left: 6px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 28px;
+
+
+}
+.mnbv{
+    margin-right: 9px;
+}
+.mnbvcxz{
+    color: blue;
+    font-weight: 470;
+}
+.mnbvc{
+    font-weight: 600;
+}
+.fghudg{
+    font-size: 14px;
+    color: blue;
+    font-weight: 500;
+}
+.hgj{
+    margin-top: 55px;
+    display: flex;
+
+}
+.hgj>img{
+    border: 1px solid rgb(160, 158, 158);
+    padding: 3px;
+    margin-right: 20px;
+}
+.descirpiov{
+    display: flex;
+    margin-top: 100px;
+}
+.a1122{
+    font-size: small;
+    font:inherit
+
+}
+.a2211{
+    padding: 30px;
+    padding-top: 0;
+    font-size: 15px;
+    font-weight: 400;
+    
+
+}
+.bnvhjdcgjd{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.boldtext1{
+   font-size: 25px;
+   font-weight: 35;
+   font-weight: 600;
+
+}
+.textlight1,.greentext1{
+    padding-top: 9px;
+}
+.textlight1{
+  text-decoration: line-through;
+
+}
+.greentext1{
+    color: green;
+    font-weight: 500;
+}
+.fdgfdc{
+    margin-top: 20px;
+}

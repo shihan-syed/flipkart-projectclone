@@ -14,10 +14,12 @@ app.use(cors());
 
 const homeRoutes =require("./Routes/home");
 const productData = require("./models/product");
+const paymentRoutes = require("./Routes/payment")
 
 
 
 app.use("/home" , homeRoutes);
+app.use("/payment" , paymentRoutes);
 
 
 app.post("/adddata" , (req,res)=>{

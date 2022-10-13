@@ -276,6 +276,34 @@ router.post('/wishlist/:id' , (req,res)=>{
 
 
 })
+router.get("/wishlist/:id" , (req,res)=>{
+    id = req.params.id
+    console.log(id)
+
+    wishList.findAll({where:
+        {"username":id},
+        order: [
+        ['createdAt', 'DESC'], 
+       ],
+    }).then((data)=>{
+       console.log(data)
+        res.send(data)
+    })
+})
+router.delete("/deletewishlist/:id" , (req,res)=>{
+    console.log("hello");
+    id = req.params.id
+    console.log(id)
+    wishList.destroy({
+        where: {
+           id:id 
+        }
+    }).then((data)=>{
+        res.send("Sucess")
+     }).catch((err)=>{
+        res.send(err)
+     })
+});
 
 
 

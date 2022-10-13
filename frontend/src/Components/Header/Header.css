@@ -257,3 +257,54 @@ margin-top: 15px;
     border-bottom: 2px solid #adadad;
     margin: 30px 0;
   }
+  .logboxx{
+    width: 700px;
+    background-color: white;
+    height: 550px;
+    display: flex;
+    
+  }
+  .mod66{
+    width: 600px;
+  }
+  .blue11{
+    background-color: #2874f0;
+    width: 40%;
+    
+    
+  }
+  .white11{
+    background-color: white;
+    width: 65%;
+  }
+  .span55{
+    color: white;
+    width: 170px;
+    font-size: large;
+    margin-left: 20px;
+  }
+
+  .login2{
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+    margin-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+
+  
+    
+ }
+ .img78{
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 200px;
+   
+ }
+
+
+
+
+ /* delte */
+ 

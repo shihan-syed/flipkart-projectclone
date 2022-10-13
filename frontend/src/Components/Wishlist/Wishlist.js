@@ -1,9 +1,35 @@
 import './Wishlist.css'
-
-import React from 'react'
+import axios from 'axios'
+import { baseurl } from '../Axios/constants';
+import React, { useEffect, useState } from 'react'
 import { Header } from '../Header/Header'
 
 export const Wishlist = () => {
+
+  var token = localStorage.getItem('email')
+  
+  const [data , setData]= useState([]);
+  const [remove ,setRemove]=useState("0")
+  
+  
+      useEffect(()=>{
+         axios.get(`${baseurl}/home/wishlist/${token}`).then((data)=>{
+         setData(data.data)
+         console.log("hello")
+          })
+      },[token ,remove ]);
+
+      const trash=(itm)=>{
+        axios.delete(`${baseurl}/home/deletewishlist/${itm.id}`).then((data)=>{
+            setRemove(remove+1)
+            
+            
+             })
+      }
+
+
+
+
   return (
     <div className='divwishlist' > 
 <Header />
@@ -18,32 +44,26 @@ export const Wishlist = () => {
     <div className='div22'> 
      
     <div className='div23'> My Wishlist</div>
+    {data.map((itm)=>
     <div className='wishlisitem'>
-        
+    
          
-          <div><img className='itemimage' src='https://rukminim1.flixcart.com/image/832/832/ksxjs7k0/shoe/z/3/j/10-373108-10-puma-white-white-gray-violet-original-imag6dsukkzk5hxy.jpeg?q=70'/></div>
+          <div> <img className='itemimage' src={itm.imageurl}/></div>
 
-          <div className='div40'> <div className='div401'>Urban Terrain UT1001 MTB 27.5 T Mountain Cycle (21 Gear, Blue)</div>
+          <div className='div40'> <div className='div401'>{itm.Name}</div>
           <div ><button className='starr' > <i class="fa-solid fa-star fa-2xs"></i></button>
           <img className='asrd' src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="" style={{"width":'85px' }}/>
           </div><div></div>
           <div className='pricee'>
-          <div className='pricce'>₹3,999</div>
-          <div><p className='strike'><s>₹9999</s></p></div>
-          <div className='off'>40% off</div>
+          <div className='pricce'>₹{itm.price}</div>
+          <div><p className='strike'><s>₹{itm.maxprice}</s></p></div>
+          <div className='off'>{itm.discount}% Off</div>
           </div>
           
           </div>
+          <div className='deleteicon' onClick={()=>{trash(itm)}} ><i className=" fa-solid fa-trash"   ></i></div>
           
-
-          <div className='deleteicon'><i className=" fa-solid fa-trash"></i></div>
-          
-
-          
-     
-
-
-    </div>
+    </div>)}
    </div>
 </div>
 

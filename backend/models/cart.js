@@ -1,14 +1,14 @@
 const {Sequelize , DataTypes}  = require('sequelize');
 const sequel = new Sequelize('flipkart', 'postgres', 'shihan@123', {
-  host: 'localhost',
-  dialect: 'postgres'
+    host: 'localhost',
+    dialect: 'postgres'
 }); 
 
 const db={}
  db.Sequelize=Sequelize;
  db.sequel=sequel;
 
- const productData = db.sequel.define('productData', {
+ const cartData = db.sequel.define('cartData', {
     id: {
         type: DataTypes.INTEGER,  
          primaryKey: true,
@@ -23,25 +23,14 @@ const db={}
       type: DataTypes.STRING,
       allowNull: false
     },
-    Description: {
-      type: DataTypes.STRING(1234),
-      allowNull: false
-
-    },
+    
     Category: {
         type: DataTypes.STRING,
         allowNull: false
  
     },
-    keywords: {
-      type: DataTypes.STRING,
-      allowNull: false
-
-  }, 
-  rating: {
-    type: DataTypes.DECIMAL(10, 1),
-    allowNull: false
-},
+   
+ 
 maxprice: {
   type: DataTypes.INTEGER,
   allowNull: false
@@ -56,11 +45,21 @@ discount: {
   type: DataTypes.INTEGER,
   allowNull: false
 
-}
+},
+quantity: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  
+  },
+username: {
+    type: DataTypes.STRING,
+    allowNull: false
+
+  }
 
   });
   db.sequel.sync().then(()=>{
     console.log("sync")}
   )
 
-  module.exports = productData;
+  module.exports = cartData;

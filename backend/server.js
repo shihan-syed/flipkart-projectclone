@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors=require("cors");
-const db = require("./models");
+
 
 const homeData = require('./models/home')
 
@@ -14,10 +14,12 @@ app.use(cors());
 
 const homeRoutes =require("./Routes/home");
 const productData = require("./models/product");
+const paymentRoutes = require("./Routes/payment")
 
 
 
 app.use("/home" , homeRoutes);
+app.use("/payment" , paymentRoutes);
 
 
 app.post("/adddata" , (req,res)=>{
@@ -63,7 +65,4 @@ productData.create(data).then((data)=>{
   app.listen(PORT, () => {
     console.log(`listening on: http://localhost:${PORT}`);
   });
-<<<<<<< HEAD
-=======
   
->>>>>>> 3d75cd96221594954e2cb35de0033a55da9e020a

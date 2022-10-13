@@ -5,8 +5,10 @@ import '../CardOffers1/CardOffers.css';
 import logo from "../../images/2.png";
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
+import { useNavigate } from 'react-router-dom';
 
 function CardOffers3() {
+  const history = useNavigate();
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -28,11 +30,16 @@ function CardOffers3() {
     const [data , setData]= useState([]);
 
     useEffect(()=>{
-      axios.get(`${baseurl}/home/getdetails1`).then((data)=>{
+      axios.get(`${baseurl}/home/getdetails3`).then((data)=>{
       console.log(data.data)
       setData(data.data)
     })
   },[])
+
+  const redirecttp=(itm)=>{
+    localStorage.setItem("item" , itm.item)
+    history(`/listproduct/${itm.item}`)
+  }
     
       return (
         <div style={{"margin-bottom":"20px"}}>
@@ -58,7 +65,7 @@ function CardOffers3() {
                 itemClass="carousel-item-padding-40-px"
       >
         {data.map((itm,k)=>
-    <div className='egvwrg'>
+    <div className='egvwrg' onClick={()=>{redirecttp(itm)}}>
             <div className='textcenter rthfhfdh'><img src={itm.imageurl} alt="" style={{"height":"250px"}}/></div>
             <div className='textcenter etre'> <p>{itm.Name}</p>
               <div className='textcenter dbhfj'><p>{itm.Description}</p></div>

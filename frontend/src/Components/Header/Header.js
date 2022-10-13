@@ -1,7 +1,8 @@
 import React from 'react'
 
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
 import './Header.css' ;
+import { Link } from "react-router-dom";
 
 
 export const Header = () => 
@@ -12,19 +13,20 @@ export const Header = () =>
   
   
       <div className='topnav '>
-        
-        <div className='arrange'>
+       
+        <div className='arrange'> <Link to='/'>
         <div className='logo-area'><img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png' className='flipkart-logo' alt="" />
-        <div ><p className='explore '>Explore 
+        <div >
+          <p className='explore '>Explore 
           <span className='plus-color'> plus</span>
           <img  src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png' alt='img'  className='flipkart-plus-logo'/>
-          </p>
+          </p> 
          
     
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
       
         </div>  
-      </div>
+      </div></Link>
 
       <div className='qscqsc'>    
         <form className="shadow form-astf">
@@ -50,7 +52,7 @@ export const Header = () =>
         <p className='span-line'> Orders, Wishlist and  </p>
         <p className='span-line'> Recommendations </p>
 
-        <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' className='blue-image'></img>
+        <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' className='blue-image' alt=''></img>
       </div>
 
       
@@ -75,7 +77,8 @@ export const Header = () =>
 
         <div className='cart-div'>
          <i className=" cart-icon fa-sm fa-solid fa-cart-shopping"></i>
-          <p  className='cart-class'>Cart</p>
+         <Link to="/cart"><p  className='cart-class'>Cart</p></Link>
+
         </div>
      
       

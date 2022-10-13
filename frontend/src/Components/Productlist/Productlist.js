@@ -3,10 +3,12 @@ import { Header } from '../Header/Header'
 import './Productlist.css'
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
+import { useNavigate } from 'react-router-dom';
 
 function Productlist() {
-
+ var id = localStorage.getItem("email")
     var search = localStorage.getItem("item")
+    const history = useNavigate();
 
     const [data1 , setData1] = useState("0")
     const [data , setData]= useState([]);
@@ -43,7 +45,13 @@ function Productlist() {
     })
   },[data1, search])
 
- 
+  const redirecttp=(itm)=>{
+    localStorage.setItem("itms" , itm.id)
+    history(`/product/${itm.Name}`)
+  }
+  const heart =(itm)=>{
+   axios.post(`${baseurl}/home/wishlist/${id}`, {itm}).then((data)=>{console.log(data);})
+  }
 
   return (
     <div>
@@ -67,8 +75,9 @@ function Productlist() {
                 
                 <div className='row'>
                 {data.map((itm,k)=>
-                    <div className='itemlist coloum' >
-                        <div className='textcenter imghrt'>   
+                    <div className='itemlist coloum' ><div className='wishlist'> <div className='heart' onClick={()=>{heart(itm)}}> <i class="fa-solid fa-heart"></i> </div></div>
+                        <div className='textcenter imghrt' onClick={()=>{redirecttp(itm)}}>   
+                       
                         <img src={itm.imageurl} alt="" style={{"width":"200px","height":"200px"}} />
                         </div>
                          <h6 className='hdding'>{itm.Name}</h6>

@@ -1,13 +1,20 @@
-import React from 'react'
-import TextField from '@mui/material/TextField';
+import React, { useState } from 'react'
+
+
 import './Header.css' ;
 import { Link } from "react-router-dom";
 
 
+
 export const Header = () => 
-{
+{ 
+
+  
+  
   return (
-   
+  
+  
+  
       <div className='topnav '>
        
         <div className='arrange'> <Link to='/'>
@@ -19,7 +26,7 @@ export const Header = () =>
           </p> 
          
     
-        {/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
+    
       
         </div>  
       </div></Link>
@@ -34,31 +41,45 @@ export const Header = () =>
       </div>
 
       <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>
+      {/* dialog */}
 
-    {/* Modal   */}
-
-<div className="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog  ">
-    <div className='modal-area'>
-
-      <div className='modal-blue'>
-        <h4 className='blue-line'> Login </h4>
+      <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         
-        <p className='span-line'>Get access to your  </p>
-        <p className='span-line'> Orders, Wishlist and  </p>
-        <p className='span-line'> Recommendations </p>
+        <div className="modal-dialog modal-content ">
+        
+            <div className='logboxx'>
+              <div className='blue11'>
 
-        <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' className='blue-image' alt=''></img>
-      </div>
-      <div className='modal-white'>
-      <TextField id="standard-basic" label="Standard" variant="standard" />
-      </div>
-    </div>
+                <div className='login2'>Login</div>
+
+                <div className='span55'>
+                <span>Get access to your</span>       
+                <span> Orders, Wishlist and </span>
+                <span> Recommendations</span>
+                </div>
+
+                <div className='img78'><img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png'/></div>
+
+              </div>
+               
+              <div  className='white11'>
+
+             </div> 
+             </div>
+              </div> 
+              </div>
+               </div>
+       
+
     
-  
-  </div>
-</div>
+          
+         
+        
+      
+    
+     
 
+          {/* dialog */}
 
 
 
@@ -73,11 +94,17 @@ export const Header = () =>
          <i className=" cart-icon fa-sm fa-solid fa-cart-shopping"></i>
          <Link to="/cart"><p  className='cart-class'>Cart</p></Link>
 
+    
+
+
+
+        
+
         </div>
      
       
       </div>
-  </div>
+  
   )
 }
 
@@ -99,6 +126,7 @@ export const Header = () =>
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" className="btn btn-primary">Save changes</button>
       </div>
+      
     </div>
   </div>
 </div>

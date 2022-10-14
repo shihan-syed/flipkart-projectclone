@@ -68,7 +68,7 @@ const [login , setLogin]=useState(true)
                }
         
                
-                <div className='img78' > <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png'/></div>
+                <div className='img78'> <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png'/></div>
               </div>
 
          

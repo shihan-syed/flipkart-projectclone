@@ -8,9 +8,14 @@ import { Link } from "react-router-dom";
 
 export const Header = () => 
 { 
-
+const [login , setLogin]=useState(true)
   
-  
+  const handleLogin = ()=>{
+    setLogin (false)
+  }
+  const handleSignup =()=>{
+    setLogin (true)
+  }
   return (
   
   
@@ -24,11 +29,8 @@ export const Header = () =>
           <span className='plus-color'> plus</span>
           <img  src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png' alt='img'  className='flipkart-plus-logo'/>
           </p> 
-         
-    
-    
-      
-        </div>  
+        </div> 
+
       </div></Link>
 
       <div className='qscqsc'>    
@@ -41,49 +43,75 @@ export const Header = () =>
       </div>
 
       <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>
-      {/* dialog */}
-
       <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        
         <div className="modal-dialog modal-content ">
-        
+          
             <div className='logboxx'>
               <div className='blue11'>
-
-                <div className='login2'>Login</div>
-
+                { login ? 
+                  <div>
+                   <div className='login2'>Login</div>
                 <div className='span55'>
                 <span>Get access to your</span>       
                 <span> Orders, Wishlist and </span>
                 <span> Recommendations</span>
                 </div>
-
-                <div className='img78'><img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png'/></div>
-
-              </div>
-               
-              <div  className='white11'>
-
-             </div> 
-             </div>
-              </div> 
-              </div>
                </div>
-       
-
-    
-          
-         
+               :
+               <div>
+               <div className='login2'>Looks like you're new here!</div>
+            <div className='span55'>
+            <span>Sign up with your mobile number to get started</span>       
+           
+            </div>
+           </div>
+               }
         
+               
+                <div className='img78'><img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png'/></div>
+              </div>
+
+         
+              < div  className='white11'>
+                   
+              
+
+            <div class="user-id user-data">
+              <input type="email " name="" id="" required=""/>
+              <label>Enter Email/Mobile Number</label>
+            </div>
+
+            <div class="user-id user-data">
+              <input type="password" name="" id="" required=""/>
+              <label>Enter Password</label>
+            </div>
+            
+                
+            {login ? 
+              <div class="user-id button"> <input type="submit" name="" id="" value="Login" /> </div>
+            :<div class="user-id button"> <input type="submit" name="" id="" value="Signup" /> </div>
+            }
+
+            <div class="user-id">
+            
+        </div>
+           { login ? <div class="user-id button"> <input type="reset" name="" id="" value="Request OTP" /> </div>
+           : <div class="user-id button" onClick={()=>{handleSignup()}}> <input type="reset" name="" id="" value="Existing User? Login" /> </div>}
+
+           { login ? <div class="user-id" onClick={()=>{handleLogin()}}> <p class="footer"><a>New to Flipkart? Create an account</a></p> </div>
+              : <div></div>}
+
+          </div>
+        </div>
       
+              
+         
     
-     
+            {/* ////// */}
+        </div>
+       </div> 
 
-          {/* dialog */}
-
-
-
-      <div className='p-div'><p className='p-class'>Become a Seller</p></div>
+        <div className='p-div'><p className='p-class'>Become a Seller</p></div>
 
       <div className='more-div'>
         <p className='more-class'>More</p>
@@ -93,42 +121,19 @@ export const Header = () =>
         <div className='cart-div'>
          <i className=" cart-icon fa-sm fa-solid fa-cart-shopping"></i>
          <Link to="/cart"><p  className='cart-class'>Cart</p></Link>
-
-    
-
-
-
-        
-
-        </div>
-     
-      
+      </div> 
       </div>
+      </div>   
+
+          
+
+     
   
   )
 }
 
 
 
-//  Modal  
 
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div className="modal-body">
-        ...
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
-      </div>
-      
-    </div>
-  </div>
-</div>
 
 

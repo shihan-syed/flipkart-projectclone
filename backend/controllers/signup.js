@@ -1,4 +1,4 @@
-const db =require('../models')
+const signup =require('../models/signup')
 const bcrypt=require('bcrypt')
 
 
@@ -8,15 +8,16 @@ const bcrypt=require('bcrypt')
 //signup
 const signUp = async (req,res)=>{
 try {
-    const registeredUser = await db.login.findOne({where:{
+    const registeredUser = await signup.findOne({where:{
         email : req.body.email}})
     if(registeredUser)
     {return res.status(400).json({message:'user already exist'})}
 
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
-    const result = await db.login.create({
+    const result = await signup.create({
         email : req.body.email ,
-        password : hashedPassword
+        password : hashedPassword,
+        username : req.body.username
     })
 
     res.status(201).json({user: result })

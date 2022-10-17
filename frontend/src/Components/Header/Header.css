@@ -426,3 +426,12 @@ margin-bottom: 20px;
     text-decoration:none;
     color:#2874f0;
 }
+.namee{
+    color: white;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 490;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 33px;
+}

@@ -1,21 +1,46 @@
 import React, { useState } from 'react'
 
-
+import axios from "axios";
+import {baseurl} from '../Axios/constants'
 import './Header.css' ;
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 export const Header = () => 
 { 
 const [login , setLogin]=useState(true)
-  
+const [email , setEmail] =useState('')
+const [password , setPassword] =useState('')
+const [username , setUsername]= useState("")
+  // const history = useNavigate();
+const loggedIn =!!localStorage.getItem("email")
+console.log(loggedIn);
   const handleLogin = ()=>{
     setLogin (false)
   }
-  const handleSignup =()=>{
-    setLogin (true)
+  const handleLoginn = ()=>{
+axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).then((res)=>{
+  console.log(res.data);
+  if(res.data.status){
+
+    localStorage.setItem('email' , res.data.email)
+       localStorage.setItem('username' , res.data.username) 
+       window.location.reload();
+
   }
+  else {
+    alert("incorrect username")}
+}).catch((err)=>{console.log(err)})
+  }
+  const handleSignup =()=>{
+    axios.post(`${baseurl}/a/signup` , {"email" : email , "password" : password , "username" : username}).then((res)=>{
+      console.log(res);
+      setLogin(true)
+    })
+  }
+  
+
   return (
   
   
@@ -42,7 +67,7 @@ const [login , setLogin]=useState(true)
       </form>
       </div>
 
-      <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>
+     {loggedIn ? <div className="namee"><h5>{localStorage.getItem("username")}</h5></div >: <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>}
       <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-content ">
           
@@ -74,31 +99,35 @@ const [login , setLogin]=useState(true)
          
               < div  className='white11'>
                    
-              
+             {login ?<div></div> : <div class="user-id user-data">
+              <input  type="string" required name="username" onChange={(e)=>{setUsername(e.target.value)}} />
+              <label>Username</label>
+            </div>}
 
             <div class="user-id user-data">
-              <input type="email " name="" id="" required=""/>
+              <input  type="email" required  name="email" onChange={(e)=>{setEmail(e.target.value)}} />
               <label>Enter Email/Mobile Number</label>
             </div>
 
+
             <div class="user-id user-data">
-              <input type="password" name="" id="" required=""/>
+              <input type="password" required name="password" onChange={(e)=>{setPassword(e.target.value)}} />
               <label>Enter Password</label>
             </div>
             
                 
             {login ? 
-              <div class="user-id button"> <input type="submit" name="" id="" value="Login" /> </div>
-            :<div class="user-id button"> <input type="submit" name="" id="" value="Signup" /> </div>
+              <div class="user-id button" onClick={()=>{handleLoginn()}}> <input type="submit" name="" id="" value="Login" /> </div>
+            :<div class="user-id button"  onClick={()=>{handleSignup()}}> <input type="submit" name="" id="" value="Signup" /> </div>
             }
 
             <div class="user-id">
             
         </div>
            { login ? <div class="user-id button"> <input type="reset" name="" id="" value="Request OTP" /> </div>
-           : <div class="user-id button" onClick={()=>{handleSignup()}}> <input type="reset" name="" id="" value="Existing User? Login" /> </div>}
+           : <div class="user-id button" > <input type="reset" name="" id="" value="Existing User? Login" /> </div>}
 
-           { login ? <div class="user-id" onClick={()=>{handleLogin()}}> <p class="footer"><a>New to Flipkart? Create an account</a></p> </div>
+           { login ? <div class="user-id" onClick={handleLogin} > <p class="footer"><a>New to Flipkart? Create an account</a></p> </div>
               : <div></div>}
 
           </div>
@@ -130,8 +159,8 @@ const [login , setLogin]=useState(true)
      
   
   )
-}
 
+          }
 
 
 

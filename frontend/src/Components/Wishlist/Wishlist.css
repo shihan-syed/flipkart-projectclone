@@ -1,15 +1,13 @@
 .divwishlist{
    background-color:rgba(70, 131, 180, 0.095);
-   min-height: 100vh;
+   min-height: 115vh;
 }
 .div20{
     display: flex;
     
-    
-    
 }
 .div21{
-    width: 30%;
+    width: 24%;
     background-color: rgb(253, 253, 253);
     margin-left: 165px;
     margin-top: 55px;
@@ -17,9 +15,9 @@
     height: 70px;
 }
 .div22{
-    width: 70%;
+    width: 75%;
     background-color: rgb(255, 255, 255);
-    margin-right: 275px;
+    margin-right: 150px;
 margin-top: 55px;
 padding: 10px;
 margin-left: 30px;
@@ -33,7 +31,7 @@ margin-bottom: 20px;
     margin-left: 10px;
 }
 .wishlisitem{
-    width: 100%;
+    /* width: 100%; */
     height: 130px;
     display: flex;
     justify-items: self-start;
@@ -96,6 +94,7 @@ background-color: rgb(253, 253, 253);
 margin-top: 30px;
 padding: 20px;
 height: 480px;
+
 
 
 }

@@ -31,6 +31,17 @@ function Productpage() {
       })
     }
    }
+   const Buyproductsin=(itm)=>{
+    if(!token){
+      alert("You Need to login to Add Products")
+    }else{
+      axios.post(`${baseurl}/home/addcart/${token}`,itm ).then((data)=>{
+        console.log(data)
+        history("/buynow")
+
+      })
+    }
+   }
 
   return (
     <div>
@@ -45,7 +56,7 @@ function Productpage() {
               </div>
               <div className='bnvjkfdc'>
                 <div><button  onClick={()=>{addproductsin({data})}} style={{"backgroundColor":"#ff9f00"}}><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button></div>
-                <div><button style={{"backgroundColor":"#fb641b"}}><i class="fa-solid fa-bolt"></i> BUY NOW</button></div>
+                <div><button onClick={()=>{Buyproductsin({data})}} style={{"backgroundColor":"#fb641b"}} ><i class="fa-solid fa-bolt"></i> BUY NOW</button></div>
               </div>
             </div>
 

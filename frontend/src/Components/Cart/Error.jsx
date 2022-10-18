@@ -8,11 +8,7 @@ import './Cart.css'
 function Error() {
     const history = useNavigate()
     const gotohome=()=>{
-<<<<<<< HEAD
-      history('/payment')
-=======
       history('/cart')
->>>>>>> b70cde2b9147a41522a86c536519672578dec9a4
     }
   return (
     <div className='hfkjgdshg'>

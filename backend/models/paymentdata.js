@@ -1,15 +1,8 @@
 const {Sequelize , DataTypes}  = require('sequelize');
-<<<<<<< HEAD
 const sequel = new Sequelize('flipkart', 'postgres', 'shihan@123', {
   host: 'localhost',
   dialect: 'postgres'
 });
-=======
-const sequel = new Sequelize('postgres', 'postgres', 'admin', {
-    host: 'localhost',
-    dialect: 'postgres'
-}); 
->>>>>>> b70cde2b9147a41522a86c536519672578dec9a4
 
 const db={}
  db.Sequelize=Sequelize;

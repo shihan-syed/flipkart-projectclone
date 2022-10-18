@@ -2,9 +2,10 @@ const express = require('express');
 const cartData = require('../models/cart');
 const homeData = require('../models/home');
 const productData = require('../models/product');
+const wishList = require('../models/wishlist');
 const router = express.Router();
 
-
+ 
 
 router.get("/getdetails1" ,(req,res)=>{
     homeData.findAll({
@@ -236,6 +237,73 @@ router.put("/update/:id" , (req,res)=>{
         })
     })
 })
+
+router.post('/wishlist/:id' , (req,res)=>{
+    data= req.body.itm
+    console.log(data)
+    id = req.params.id
+    console.log(id)
+
+
+
+    item={
+        imageurl:data.imageurl ,
+        Name:data.Name ,
+        Category:data.Category,
+        maxprice : data.maxprice,
+        price: data.price,
+        discount: data.discount,
+        username:id,
+        pid:data.id
+      }
+      wishList.findOne({where:{Name:data.Name}}).then((data)=>{
+        console.log(data)
+      if(data===null){
+      wishList.create(item).then((data)=>{
+        console.log("sucess")
+        res.send("Success")
+      }).catch((err)=>{
+        console.log(err)
+        res.send(err)
+      })}else{
+        console.log("Wishlist Added")
+        res.send("Wishlist Added")
+      }
+    }).catch((err)=>{
+        console.log(err)
+        res.send(err) 
+    })
+
+
+})
+router.get("/wishlist/:id" , (req,res)=>{
+    id = req.params.id
+    console.log(id)
+
+    wishList.findAll({where:
+        {"username":id},
+        order: [
+        ['createdAt', 'DESC'], 
+       ],
+    }).then((data)=>{
+       console.log(data)
+        res.send(data)
+    })
+})
+router.delete("/deletewishlist/:id" , (req,res)=>{
+    console.log("hello");
+    id = req.params.id
+    console.log(id)
+    wishList.destroy({
+        where: {
+           id:id 
+        }
+    }).then((data)=>{
+        res.send("Sucess")
+     }).catch((err)=>{
+        res.send(err)
+     })
+});
 
 
 router.delete("/clearcart/:id" , (req,res)=>{

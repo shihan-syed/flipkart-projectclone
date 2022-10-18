@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 const cors=require("cors");
-const db = require("./models");
+
+
+
+
 
 const homeData = require('./models/home')
 
@@ -17,13 +20,19 @@ app.use(cors());
 
 const homeRoutes =require("./Routes/home");
 const productData = require("./models/product");
-const paymentRoutes = require("./Routes/payment")
+const paymentRoutes = require("./Routes/payment");
+const  signIn = require('./Routes/user')
+const  signUp = require('./controllers/signup')
+
+
 
 
 
 app.use("/home" , homeRoutes);
 app.use("/payment" , paymentRoutes);
 
+app.use('/a' ,signUp)
+app.use('/b',signIn)
 
 app.post("/adddata" , (req,res)=>{
   data=req.body

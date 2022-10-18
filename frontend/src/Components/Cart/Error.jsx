@@ -8,7 +8,7 @@ import './Cart.css'
 function Error() {
     const history = useNavigate()
     const gotohome=()=>{
-      history('/payment')
+      history('/cart')
     }
   return (
     <div className='hfkjgdshg'>

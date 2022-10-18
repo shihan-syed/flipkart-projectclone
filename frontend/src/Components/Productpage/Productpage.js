@@ -26,7 +26,7 @@ function Productpage() {
     }else{
       axios.post(`${baseurl}/home/addcart/${token}`,itm ).then((data)=>{
         console.log(data)
-        history("/payment")
+        history("/cart")
 
       })
     }

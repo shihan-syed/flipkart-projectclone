@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import BuyNow from "./Components/BuyNow/BuyNow";
+import BuyNow from "./Components/BuyNow.css/BuyNow";
 import Cart from "./Components/Cart/Cart";
+import Error from "./Components/Cart/Error";
+import Sucess from "./Components/Cart/success";
 
 import Home from "./Components/Home/Home";
 // import Payment from "./Components/Payment/Payment";
@@ -23,6 +25,9 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/Checkout' element={<BuyNow/>}/>
       <Route path='/wishlist' element={<Wishlist/>}/>
+      <Route path='/buynow' element={<BuyNow/>}/>
+      <Route path='/payment/3/sucess' element={<Sucess/>}/>
+      <Route path='/error' element={<Error/>}/>
 
       </Routes>
   

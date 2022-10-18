@@ -99,17 +99,7 @@ const [quantity , setQuantity]= useState('0');
       }
 
       const buynow=()=>{
-<<<<<<< HEAD
        history('/buynow')
-=======
-        axios.post(`${baseurl}/payment/create-checkout-session`, {data}).then(res => {
-           window.location.href = res.data.url
-              
-          })
-          .catch(e => {
-            console.error(e.error)
-          })
->>>>>>> b70cde2b9147a41522a86c536519672578dec9a4
       }
 
     

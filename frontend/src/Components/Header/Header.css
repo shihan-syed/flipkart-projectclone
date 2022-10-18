@@ -373,7 +373,7 @@ margin-bottom: 20px;
 .white11 .user-data input:focus{
     border-bottom:1px solid #2874f0;
 }
-.white11  span a{
+.white11  span .a{
     position: absolute;
     top: 140px;
     left: 315px;
@@ -418,7 +418,7 @@ margin-bottom: 20px;
 .white11  .button input[type=reset]:hover{
     box-shadow:2px 2px 10px 0 rgba(0,0,0,0.2)
 }
-.user-id .footer a{
+.user-id .footer .a{
     position: absolute;
     top: 115px;
     left: 51px;

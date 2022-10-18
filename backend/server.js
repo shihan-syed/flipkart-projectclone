@@ -10,10 +10,13 @@ const homeData = require('./models/home')
 
 const PORT = 4000;
 
-
+app.use('/payment/webhook', express.raw({
+  type: "*/*"
+}))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
 
 const homeRoutes =require("./Routes/home");
 const productData = require("./models/product");

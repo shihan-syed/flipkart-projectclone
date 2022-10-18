@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { baseurl } from '../Axios/constants';
 import { Header } from '../Header/Header'
 import './Cart.css'
@@ -7,7 +8,7 @@ import './Cart.css'
 
 
 function Cart() {
-
+const history = useNavigate();
 var token = localStorage.getItem('email')
 const [remove ,setRemove]=useState("0")
 const [data , setData]= useState([]);
@@ -98,6 +99,9 @@ const [quantity , setQuantity]= useState('0');
       }
 
       const buynow=()=>{
+<<<<<<< HEAD
+       history('/buynow')
+=======
         axios.post(`${baseurl}/payment/create-checkout-session`, {data}).then(res => {
            window.location.href = res.data.url
               
@@ -105,6 +109,7 @@ const [quantity , setQuantity]= useState('0');
           .catch(e => {
             console.error(e.error)
           })
+>>>>>>> b70cde2b9147a41522a86c536519672578dec9a4
       }
 
     

@@ -5,7 +5,7 @@ const productData = require('../models/product');
 const wishList = require('../models/wishlist');
 const router = express.Router();
 
-
+ 
 
 router.get("/getdetails1" ,(req,res)=>{
     homeData.findAll({
@@ -297,6 +297,21 @@ router.delete("/deletewishlist/:id" , (req,res)=>{
     wishList.destroy({
         where: {
            id:id 
+        }
+    }).then((data)=>{
+        res.send("Sucess")
+     }).catch((err)=>{
+        res.send(err)
+     })
+});
+
+
+router.delete("/clearcart/:id" , (req,res)=>{
+    id = req.params.id
+    // console.log(id)
+    cartData.destroy({
+        where: {
+           username:id 
         }
     }).then((data)=>{
         res.send("Sucess")

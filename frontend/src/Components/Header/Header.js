@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
 import './Header.css' ;
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -93,7 +93,7 @@ axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).th
                }
         
                
-                <div className='img78'> <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png'/></div>
+                <div className='img78'> <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png' alt=""/></div>
               </div>
 
          
@@ -125,9 +125,9 @@ axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).th
             
         </div>
            { login ? <div class="user-id button"> <input type="reset" name="" id="" value="Request OTP" /> </div>
-           : <div class="user-id button" > <input type="reset" name="" id="" value="Existing User? Login" /> </div>}
+           : <div class="user-id button" onClick={()=>{setLogin(true)}} > <input type="reset" name="" id="" value="Existing User? Login" /> </div>}
 
-           { login ? <div class="user-id" onClick={handleLogin} > <p class="footer"><a>New to Flipkart? Create an account</a></p> </div>
+           { login ? <div class="user-id" onClick={handleLogin} > <p class="footer"><div className='a'>New to Flipkart? Create an account</div></p> </div>
               : <div></div>}
 
           </div>

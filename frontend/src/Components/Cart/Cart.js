@@ -99,25 +99,15 @@ const [quantity , setQuantity]= useState('0');
 
       const buynow=()=>{
         axios.post(`${baseurl}/payment/create-checkout-session`, {data}).then(res => {
-            if (res.ok) return res.json()
-            return res.json().then(json => Promise.reject(json))
-          })
-          .then(({ url }) => {
-            window.location = url
+           window.location.href = res.data.url
+              
           })
           .catch(e => {
             console.error(e.error)
           })
       }
 
-//   const  onToken = (token) => {
-//     axios.post(`${baseurl}/payment/create-checkout-session`, {token}).then(response => {
-//           response.json().then(data => {
-//             alert(`We are in business, ${data.email}`);
-//           });
-//         });
-//       }
-
+    
     
 
   return (

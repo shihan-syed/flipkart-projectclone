@@ -164,3 +164,44 @@
     padding-bottom: 20px;
     font-family: inherit;
 }
+
+.backgroundsucess,.hfkjgdshg{
+    background-color: rgba(70, 131, 180, 0.162);
+    min-height: 100vh;
+}
+
+.paymentconfirmed{
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.itembox{
+    background-color: white;
+    width: 500px;
+    height: 290px;
+    box-shadow: inset;
+}
+
+.txttxtx{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.suscscsf{
+    padding: 25px;
+    font-family: inherit;
+    font-size: large;
+}
+.tggdfgt,.tggdfgtfg{
+    text-align: center;
+}
+.tggdfgt>button{
+    color: white;
+    background-color: rgba(225, 11, 11, 0.989);
+    border: 1px solid rgba(225, 20, 20, 0.989);
+}
+.gdfdfg{
+    font-size: 20px;
+    font-weight: 600;
+}

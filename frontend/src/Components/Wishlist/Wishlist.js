@@ -34,7 +34,7 @@ export const Wishlist = () => {
     <div className='divwishlist' > 
 <Header />
 <div className='div20'>
-    <div className='div21'><div> <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg' >
+    <div className='div21'><div> <img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg' alt="">
         </img><span className='hello'>Hello,</span></div>
          <div className='sidelogout'><div className='div78'></div>
           <div className='logbtnn'><i className="logbtn fa-solid fa-power-off"></i><p className='loggg'>Logout</p></div>
@@ -48,7 +48,7 @@ export const Wishlist = () => {
     <div className='wishlisitem'>
     
          
-          <div> <img className='itemimage' src={itm.imageurl}/></div>
+          <div> <img className='itemimage' src={itm.imageurl} alt=""/></div>
 
           <div className='div40'> <div className='div401'>{itm.Name}</div>
           <div ><button className='starr' > <i class="fa-solid fa-star fa-2xs"></i></button>

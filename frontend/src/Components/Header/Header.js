@@ -71,7 +71,7 @@ export const Header = () =>
 
         <div className='cart-div'>
          <i className=" cart-icon fa-sm fa-solid fa-cart-shopping"></i>
-         <Link to="/cart"><p  className='cart-class'>Cart</p></Link>
+         <Link to="/payment"><p  className='cart-class'>Cart</p></Link>
 
         </div>
      

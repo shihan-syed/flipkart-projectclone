@@ -73,7 +73,8 @@ function Productlist() {
                 <div className='row'>
                 {data.map((itm,k)=>
                     <div className='itemlist coloum' >
-                        <div className='textcenter imghrt' onClick={()=>{redirecttp(itm)}}>   
+                        <div className='textcenter imghrt' onClick={()=>{redirecttp(itm)}}>
+                           
                         <img src={itm.imageurl} alt="" style={{"width":"200px","height":"200px"}} />
                         </div>
                          <h6 className='hdding'>{itm.Name}</h6>

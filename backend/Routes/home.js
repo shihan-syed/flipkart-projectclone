@@ -238,6 +238,21 @@ router.put("/update/:id" , (req,res)=>{
 })
 
 
+router.delete("/clearcart/:id" , (req,res)=>{
+    id = req.params.id
+    // console.log(id)
+    cartData.destroy({
+        where: {
+           username:id 
+        }
+    }).then((data)=>{
+        res.send("Sucess")
+     }).catch((err)=>{
+        res.send(err)
+     })
+});
+
+
 
 
 

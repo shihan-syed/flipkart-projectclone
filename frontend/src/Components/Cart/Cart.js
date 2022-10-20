@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { baseurl } from '../Axios/constants';
 import { Header } from '../Header/Header'
-import './Cart.css'
-// import StripeCheckout from 'react-stripe-checkout';
+import './Cart.css' 
+import { authaxios } from '../Axios/Axios';
+// import StripeCheckout from 'react-stripe-checkout'; 
 
 
 function Cart() {
@@ -13,10 +14,11 @@ var token = localStorage.getItem('email')
 const [remove ,setRemove]=useState("0")
 const [data , setData]= useState([]);
 const [quantity , setQuantity]= useState('0');
+
 // const [pay , setPay]= useState(false);
 
     useEffect(()=>{
-       axios.get(`${baseurl}/home/cartlist/${token}`).then((data)=>{
+       authaxios.get(`/home/cartlist/${token}`).then((data)=>{
        setData(data.data)
        console.log("hello")
         })
@@ -66,7 +68,7 @@ const [quantity , setQuantity]= useState('0');
     }
 
     const redirecttp=(itm)=>{
-        axios.delete(`${baseurl}/home/delete/${itm.id}`).then((data)=>{
+        authaxios.delete(`/home/delete/${itm.id}`).then((data)=>{
             setRemove(remove+1)
             
             alert("Sucessfully Removed")
@@ -76,7 +78,7 @@ const [quantity , setQuantity]= useState('0');
     const addmoreproduct=(itm)=>{
         var qny = itm.quantity+1
        if(itm.quantity<=4){
-        axios.put(`${baseurl}/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
+        authaxios.put(`/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
            console.log(data)
            setQuantity(quantity+1)
         })
@@ -88,7 +90,7 @@ const [quantity , setQuantity]= useState('0');
       const removeproduct=(itm)=>{
         var qny = itm.quantity-1
        if(itm.quantity>1){
-        axios.put(`${baseurl}/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
+        authaxios.put(`/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
            console.log(data)
            setQuantity(quantity+1)
         })

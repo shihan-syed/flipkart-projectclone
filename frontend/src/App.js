@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import BuyNow from "./Components/BuyNow.css/BuyNow";
 import Cart from "./Components/Cart/Cart";
 import Error from "./Components/Cart/Error";
-import Sucess from "./Components/Cart/success";
+import Sucess from "./Components/Cart/Sucess";
 
 import Home from "./Components/Home/Home";
 // import Payment from "./Components/Payment/Payment";

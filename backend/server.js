@@ -25,9 +25,6 @@ const  signIn = require('./Routes/user')
 const  signUp = require('./controllers/signup')
 
 
-
-
-
 app.use("/home" , homeRoutes);
 app.use("/payment" , paymentRoutes);
 

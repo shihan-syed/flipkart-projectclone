@@ -39,6 +39,7 @@ axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).th
 
     localStorage.setItem('email' , res.data.email)
        localStorage.setItem('username' , res.data.username) 
+       localStorage.setItem("token" , res.data.jwtToken)
        window.location.reload();
 
   }

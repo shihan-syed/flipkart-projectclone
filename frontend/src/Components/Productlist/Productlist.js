@@ -4,6 +4,7 @@ import './Productlist.css'
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
 import { useNavigate } from 'react-router-dom';
+import { authaxios } from '../Axios/Axios';
 
 function Productlist() {
  var id = localStorage.getItem("email")
@@ -50,7 +51,7 @@ function Productlist() {
     history(`/product/${itm.Name}`)
   }
   const heart =(itm)=>{
-   axios.post(`${baseurl}/home/wishlist/${id}`, {itm}).then((data)=>{console.log(data);})
+   authaxios.post(`/home/wishlist/${id}`, {itm}).then((data)=>{console.log(data);})
   }
 
   return (

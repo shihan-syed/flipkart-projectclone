@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { baseurl } from '../Axios/constants';
 import { Header } from '../Header/Header';
 import './Cart.css'
+import { authaxios } from '../Axios/Axios';
 
 function Sucess() { 
   const token = localStorage.getItem("email")
@@ -13,7 +14,7 @@ function Sucess() {
   }
 
   useEffect(()=>{
-    axios.delete(`${baseurl}/home/clearcart/${token}`).then((data)=>{
+    authaxios.delete(`/home/clearcart/${token}`).then((data)=>{
     console.log("hello")
      })
  },[token]);

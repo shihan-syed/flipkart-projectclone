@@ -435,3 +435,56 @@ margin-bottom: 20px;
     margin-top: 15px;
     margin-left: 33px;
 }
+
+.logoutbtnnns{
+    background-color: white;
+    height: 90px;
+    position: absolute;
+    margin: 0;
+    z-index: 1;
+    width:100px;
+    margin-left: -20px;
+    /* padding-top: 10px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.vbvbvv{
+    text-align: center;
+    margin-top: 10px;
+    border: 0px;
+    background-color: #fff;
+    color: black;
+}
+.logoutbtnnns>div{
+ text-align: center;
+ border-top: 1px solid blue;
+ padding-bottom: 10px;
+
+}
+.iconss{
+    color: steelblue;
+}
+.searchlist{
+    background-color: white;
+    min-height: 20px;
+    position: absolute;
+    margin: 0;
+    z-index: 1;
+    width:535px;
+    margin-top: 3px;
+    
+    /* padding-top: 10px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.searchquerty{
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 6px;
+    cursor: pointer;
+}
+.searchquerty:hover{
+    color:blue
+}

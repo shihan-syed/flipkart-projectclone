@@ -4,6 +4,9 @@ const homeData = require('../models/home');
 const productData = require('../models/product');
 const wishList = require('../models/wishlist');
 const router = express.Router();
+const { Op } = require("sequelize")
+const {Sequelize ,}  = require('sequelize');
+
 
  
 
@@ -333,6 +336,17 @@ router.delete("/clearcart/:id" , (req,res)=>{
         res.send(err)
      })
 });
+
+
+router.get("/search/:id" , (req,res)=>{
+    id = req.params.id
+
+    productData.findAll({where:
+         {Name:{ [Op.match]: Sequelize.fn('to_tsquery', id)}}
+    }).then((data)=>{
+          res.send(data)    
+    })
+}) 
 
 
 

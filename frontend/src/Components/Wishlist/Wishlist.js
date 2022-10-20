@@ -3,6 +3,7 @@ import axios from 'axios'
 import { baseurl } from '../Axios/constants';
 import React, { useEffect, useState } from 'react'
 import { Header } from '../Header/Header'
+import { authaxios } from '../Axios/Axios';
 
 export const Wishlist = () => {
 
@@ -13,14 +14,14 @@ export const Wishlist = () => {
   
   
       useEffect(()=>{
-         axios.get(`${baseurl}/home/wishlist/${token}`).then((data)=>{
+         authaxios.get(`/home/wishlist/${token}`).then((data)=>{
          setData(data.data)
          console.log("hello")
           })
       },[token ,remove ]);
 
       const trash=(itm)=>{
-        axios.delete(`${baseurl}/home/deletewishlist/${itm.id}`).then((data)=>{
+        authaxios.delete(`/home/deletewishlist/${itm.id}`).then((data)=>{
             setRemove(remove+1)
             
             

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { baseurl } from '../Axios/constants';
 import { Header } from '../Header/Header';
 import './Productpage.css'
+import { authaxios } from '../Axios/Axios';
 
 function Productpage() {
 
@@ -24,7 +25,7 @@ function Productpage() {
     if(!token){
       alert("You Need to login to Add Products")
     }else{
-      axios.post(`${baseurl}/home/addcart/${token}`,itm ).then((data)=>{
+      authaxios.post(`/home/addcart/${token}`,itm ).then((data)=>{
         console.log(data)
         history("/cart")
 
@@ -35,7 +36,7 @@ function Productpage() {
     if(!token){
       alert("You Need to login to Add Products")
     }else{
-      axios.post(`${baseurl}/home/addcart/${token}`,itm ).then((data)=>{
+      authaxios.post(`/home/addcart/${token}`,itm ).then((data)=>{
         console.log(data)
         history("/buynow")
 

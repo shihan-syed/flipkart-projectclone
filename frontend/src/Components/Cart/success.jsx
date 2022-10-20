@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { baseurl } from '../Axios/constants';
 import { Header } from '../Header/Header';
+import { authaxios } from '../Axios/Axios';
 import './Cart.css'
 
 function Sucess() { 
@@ -13,7 +14,7 @@ function Sucess() {
   }
 
   useEffect(()=>{
-    axios.delete(`${baseurl}/home/clearcart/${token}`).then((data)=>{
+    authaxios.delete(`/home/clearcart/${token}`).then((data)=>{
     console.log("hello")
      })
  },[token]);

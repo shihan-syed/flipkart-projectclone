@@ -4,6 +4,10 @@ const homeData = require('../models/home');
 const productData = require('../models/product');
 const wishList = require('../models/wishlist');
 const router = express.Router();
+const admin =require('../middleware/admin')
+
+
+
 
  
 
@@ -150,7 +154,7 @@ router.get("/indproduct/:id" , (req,res)=>{
     }
 )
  
-router.post("/addcart/:id" , (req,res)=>{
+router.post("/addcart/:id" , admin , (req,res)=>{
     data= req.body.data
     console.log(data)
     id = req.params.id
@@ -192,7 +196,7 @@ router.post("/addcart/:id" , (req,res)=>{
 })
 
 
-router.get("/cartlist/:id" , (req,res)=>{
+router.get("/cartlist/:id" , admin , (req,res)=>{
     id = req.params.id
     console.log(id)
 
@@ -208,7 +212,7 @@ router.get("/cartlist/:id" , (req,res)=>{
 })
 
 
-router.delete("/delete/:id" , (req,res)=>{
+router.delete("/delete/:id" , admin , (req,res)=>{
     id = req.params.id
     console.log(id)
     cartData.destroy({
@@ -223,7 +227,7 @@ router.delete("/delete/:id" , (req,res)=>{
 });
 
 
-router.put("/update/:id" , (req,res)=>{
+router.put("/update/:id" , admin , (req,res)=>{
     id = req.params.id
     data =req.body
     console.log( data.numqnt)
@@ -238,7 +242,7 @@ router.put("/update/:id" , (req,res)=>{
     })
 })
 
-router.post('/wishlist/:id' , (req,res)=>{
+router.post('/wishlist/:id' , admin , (req,res)=>{
     data= req.body.itm
     console.log(data)
     id = req.params.id
@@ -276,7 +280,7 @@ router.post('/wishlist/:id' , (req,res)=>{
 
 
 })
-router.get("/wishlist/:id" , (req,res)=>{
+router.get("/wishlist/:id", admin , (req,res)=>{
     id = req.params.id
     console.log(id)
 
@@ -290,7 +294,7 @@ router.get("/wishlist/:id" , (req,res)=>{
         res.send(data)
     })
 })
-router.delete("/deletewishlist/:id" , (req,res)=>{
+router.delete("/deletewishlist/:id" , admin , (req,res)=>{
     console.log("hello");
     id = req.params.id
     console.log(id)
@@ -305,7 +309,7 @@ router.delete("/deletewishlist/:id" , (req,res)=>{
      })
 });
 
-router.delete("/clearcart/:id" , (req,res)=>{
+router.delete("/clearcart/:id" , admin , (req,res)=>{
     id = req.params.id
     // console.log(id)
 
@@ -320,7 +324,7 @@ router.delete("/clearcart/:id" , (req,res)=>{
      })
 });
 
-router.delete("/clearcart/:id" , (req,res)=>{
+router.delete("/clearcart/:id" , admin, (req,res)=>{
     id = req.params.id
     // console.log(id)
     cartData.destroy({

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Header } from '../Header/Header'
 import { baseurl } from '../Axios/constants';
 import './Buynow.css'
+import { authaxios } from '../Axios/Axios';
 
 function BuyNow()
 {
@@ -15,7 +16,7 @@ const [quantity , setQuantity]= useState('0');
   const addmoreproduct=(itm)=>{
     var qny = itm.quantity+1
    if(itm.quantity<=4){
-    axios.put(`${baseurl}/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
+    authaxios.put(`/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
        console.log(data)
        setQuantity(quantity+1)
     })
@@ -28,7 +29,7 @@ const [quantity , setQuantity]= useState('0');
   const removeproduct=(itm)=>{
     var qny = itm.quantity-1
    if(itm.quantity>1){
-    axios.put(`${baseurl}/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
+    authaxios.put(`/home/update/${itm.id}`, {data:token , numqnt:qny}).then((data)=>{
        console.log(data)
        setQuantity(quantity+1)
     })
@@ -48,7 +49,7 @@ const [quantity , setQuantity]= useState('0');
     return total_sum 
 }
 const redirecttp=(itm)=>{
-  axios.delete(`${baseurl}/home/delete/${itm.id}`).then((data)=>{
+  authaxios.delete(`/home/delete/${itm.id}`).then((data)=>{
       setRemove(remove+1)
       
       alert("Sucessfully Removed")
@@ -77,7 +78,7 @@ console.log(x)
 
 
   useEffect(()=>{
-    axios.get(`${baseurl}/home/cartlist/${token}`).then((data)=>{
+    authaxios.get(`/home/cartlist/${token}`).then((data)=>{
     setData(data.data)
     console.log("hello")
      })

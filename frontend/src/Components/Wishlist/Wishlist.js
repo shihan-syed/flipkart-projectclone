@@ -1,6 +1,4 @@
 import './Wishlist.css'
-import axios from 'axios'
-import { baseurl } from '../Axios/constants';
 import React, { useEffect, useState } from 'react'
 import { Header } from '../Header/Header'
 import { authaxios } from '../Axios/Axios';

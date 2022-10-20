@@ -1,24 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import axios from "axios";
 import {baseurl} from '../Axios/constants'
 import './Header.css' ;
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 export const Header = () => 
 { 
+const history = useNavigate();
 const [login , setLogin]=useState(true)
 const [email , setEmail] =useState('')
 const [password , setPassword] =useState('')
 const [username , setUsername]= useState("")
+const [logout , setLogout]=useState(false)
+const [search , setSearch]=useState('')
+const [searchdata ,setSearchData]=useState([])
   // const history = useNavigate();
 const loggedIn =!!localStorage.getItem("email")
 console.log(loggedIn);
   const handleLogin = ()=>{
     setLogin (false)
   }
+
+useEffect(()=>{
+  axios.get(`${baseurl}/home/search/${search}`).then((data)=>{
+    console.log(data.data)
+     setSearchData(data.data)
+  })
+},[search])
+
+
   const handleLoginn = ()=>{
 axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).then((res)=>{
   console.log(res.data);
@@ -40,13 +53,27 @@ axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).th
       setLogin(true)
     })
   }
-  
+
+
+const logoutuser=()=>{
+  localStorage.clear()
+  history('/')
+}
+
+const wishlistitm=()=>{
+  history('/wishlist')
+}
+const redirecttp=(itm)=>{
+  localStorage.setItem("itms" , itm.id)
+  history(`/product/${itm.Name}`)
+}
+
 
   return (
   
   
   
-      <div className='topnav '>
+      <div onMouseLeave={()=>{setLogout(false)}} className='topnav '>
        
         <div className='arrange'> <Link to='/'>
         <div className='logo-area'><img src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png' className='flipkart-logo' alt="" />
@@ -62,13 +89,25 @@ axios.post(`${baseurl}/b/signin` , {"email" : email , "password" : password}).th
       <div className='qscqsc'>    
         <form className="shadow form-astf">
         <div className=' form22'>
-        <input className="search22" type="search" placeholder="Search products, brands and more" aria-label="Search"/>
+        <input className="search22" type="search" placeholder="Search products, brands and more"  name="search" onChange={(e)=>{setSearch(e.target.value)}}/>
       <button className="btn22" type="submit"><i className="search-lens fa-solid fa-magnifying-glass"></i></button>
         </div>
       </form>
+      {search?<div className='searchlist'>
+        {searchdata.map((itm,k)=><div onClick={()=>{redirecttp(itm)}} className='searchquerty'>{itm.Name}</div>)}
+        </div>:<div></div>}
       </div>
+      
 
-     {loggedIn ? <div className="namee"><h5>{localStorage.getItem("username")}</h5></div >: <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>}
+     {loggedIn ? <div className="namee"><div onMouseEnter={()=>{setLogout(true)}} ><h5>{localStorage.getItem("username")}</h5>
+
+     {logout?<div className='logoutbtnnns'>
+      <div onClick={()=>{wishlistitm()}}><button className='vbvbvv'><i class="iconss fa-solid fa-heart"></i> Wishlist</button></div>
+      <div onClick={()=>{logoutuser()}}><button   className='vbvbvv'><i class="iconss fa-solid fa-power-off"></i> Logout</button></div>
+     </div>:<div></div>}
+     
+     
+     </div></div >: <div className='login-astf'> <button className='login-class ' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" > Login </button></div>}
       <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-content ">
           

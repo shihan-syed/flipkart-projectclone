@@ -7,6 +7,8 @@ const router = express.Router();
 const admin =require('../middleware/admin')
 
 
+const { Op } = require("sequelize")
+const {Sequelize ,}  = require('sequelize');
 
 
  
@@ -337,6 +339,17 @@ router.delete("/clearcart/:id" , admin, (req,res)=>{
         res.send(err)
      })
 });
+
+
+router.get("/search/:id" , (req,res)=>{
+    id = req.params.id
+
+    productData.findAll({where:
+         {Name:{ [Op.match]: Sequelize.fn('to_tsquery', id)}}
+    }).then((data)=>{
+          res.send(data)    
+    })
+}) 
 
 
 

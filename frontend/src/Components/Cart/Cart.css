@@ -128,7 +128,7 @@
 }
 .inputqsx::-webkit-outer-spin-button,
 .inputqsx::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  --webkit-appearance: none;
   margin: 0;
 }
 .inputqsx{
@@ -203,4 +203,15 @@
 .gdfdfg{
     font-size: 20px;
     font-weight: 600;
+}
+.jhdgkdfjkhg{
+    margin-top: 22vh;
+}
+.bvhjefdgh{
+    border: 0px;
+    color:white;
+    width: 100px;
+    height:40px;
+    margin-top:20px
+
 }

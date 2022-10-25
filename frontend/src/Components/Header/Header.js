@@ -25,10 +25,14 @@ console.log(loggedIn);
   }
 
 useEffect(()=>{
-  axios.get(`${baseurl}/home/search/${search}`).then((data)=>{
+  if(search===''){
+    return;
+  }else{ 
+    axios.get(`${baseurl}/home/search/${search}`).then((data)=>{
     console.log(data.data)
      setSearchData(data.data)
   })
+}
 },[search])
 
 

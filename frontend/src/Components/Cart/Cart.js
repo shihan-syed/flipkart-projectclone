@@ -1,7 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { baseurl } from '../Axios/constants';
 import { Header } from '../Header/Header'
 import './Cart.css' 
 import { authaxios } from '../Axios/Axios';
@@ -17,11 +15,23 @@ const [quantity , setQuantity]= useState('0');
 
 // const [pay , setPay]= useState(false);
 
-    useEffect(()=>{
-       authaxios.get(`/home/cartlist/${token}`).then((data)=>{
-       setData(data.data)
-       console.log("hello")
-        })
+    useEffect( ()=>{
+        if(token===null){
+            return
+        }else{ 
+            
+  try{
+    const  getcartdata = async ()=>{
+     const response =  await authaxios.get(`/home/cartlist/${token}`)
+       setData(response.data)
+    }
+    getcartdata()
+    } 
+    catch(err) {
+        console.log(err)
+    } 
+        
+    }
     },[token,remove,quantity]);
 
     const maxp=()=>{
@@ -110,7 +120,7 @@ const [quantity , setQuantity]= useState('0');
   return (
     <div className='ureiyfd'>
         <Header/>
-        <div className='chome'>
+        {token ? <div className='chome'>
             <div className='leftcart'>
                 <div className='cartbox'>
                 {data.map((itm,k)=>
@@ -200,7 +210,16 @@ const [quantity , setQuantity]= useState('0');
 
             </div>
 
+        </div>: 
+        <div> 
+            <div className='text-center jhdgkdfjkhg'>
+            <div><img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" style={{"height":"200px", "width":"300px"}} alt="" /></div>
+           <div className='mt-1'>Missing Cart items?</div>
+           <div>Login to see the items you added previously</div>
+           {/* <div><button Link="#exampleModal" className='bvhjefdgh' style={{"backgroundColor":"#fb641b"}}>Login</button></div> */}
+            </div>
         </div>
+        }
 
     </div>
   )

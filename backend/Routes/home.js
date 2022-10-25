@@ -199,6 +199,7 @@ router.post("/addcart/:id" , admin , (req,res)=>{
 
 
 router.get("/cartlist/:id" , admin , (req,res)=>{
+   try{
     id = req.params.id
     console.log(id)
 
@@ -211,6 +212,9 @@ router.get("/cartlist/:id" , admin , (req,res)=>{
        console.log(data)
         res.send(data)
     })
+}catch(err){
+    console.log(err)
+}
 })
 
 
@@ -343,12 +347,14 @@ router.delete("/clearcart/:id" , admin, (req,res)=>{
 
 router.get("/search/:id" , (req,res)=>{
     id = req.params.id
-
-    productData.findAll({where:
+try{productData.findAll({where:
          {Name:{ [Op.match]: Sequelize.fn('to_tsquery', id)}}
     }).then((data)=>{
           res.send(data)    
     })
+}catch(err){
+    console.log(err)
+} 
 }) 
 
 

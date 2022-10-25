@@ -85,6 +85,9 @@ console.log(x)
  },[token , remove , quantity]);
 
 const Payment = ()=>{
+  if(totalamount()===0){
+    alert("No Product in Cart")
+  }else{
   
   axios.post(`${baseurl}/payment/create-checkout-session`, {data}).then(res => {
     window.location.href = res.data.url
@@ -92,7 +95,7 @@ const Payment = ()=>{
    })
    .catch(e => {
      console.error(e.error)
-   })
+   })}
 }
 
   return (
